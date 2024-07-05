@@ -1,4 +1,4 @@
 return {
-  -- available: gruvbox, rose-pine, tokyonight, catppuccin
-  palette = "darkplus",
+  -- available: gruvbox, rose-pine, tokyonight, catppuccin, darkplus
+  palette = "nordic",
 }

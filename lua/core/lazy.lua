@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { "rose-pine/neovim", name = "rose-pine" },
+  'AlexvZyl/nordic.nvim',
   "ellisonleao/gruvbox.nvim",
   "folke/tokyonight.nvim",
   { "catppuccin/nvim",  name = "catppuccin" },

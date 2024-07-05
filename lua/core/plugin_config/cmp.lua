@@ -17,7 +17,7 @@ cmp.setup({
     { name = "gh_issues" },
     { name = "nvim_lsp" },
     { name = "buffer" },
-    { name = "path", keyword_length = 5 },
+    { name = "path",     keyword_length = 5 },
     { name = "nvim_lua" },
     -- { name = "copilot", priority = -30000 },
   },
@@ -37,10 +37,10 @@ cmp.setup({
         if vim_item.kind == 'Color' and entry.completion_item.documentation then
           local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
           if r then
-            local color = string.format('%02x', r) .. string.format('%02x', g) ..string.format('%02x', b)
+            local color = string.format('%02x', r) .. string.format('%02x', g) .. string.format('%02x', b)
             local group = 'Tw_' .. color
             if vim.fn.hlID(group) < 1 then
-              vim.api.nvim_set_hl(0, group, {fg = '#' .. color})
+              vim.api.nvim_set_hl(0, group, { fg = '#' .. color })
             end
             vim_item.kind = "■" -- or "⬤" or anything
             vim_item.kind_hl_group = group
@@ -58,7 +58,7 @@ cmp.setup({
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
     ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
-    ["<C-l>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping(function(fallback)
       cmp.close()
       fallback()
